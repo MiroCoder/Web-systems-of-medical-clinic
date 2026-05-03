@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
-from wheel.metadata import _
+from django.utils.translation import gettext as _
 from .models import ProfileModel, MedicalRecordModel, ScheduleModel, VisitModel
 from .forms import SignUpForm, UserForm, ScheduleForm, VisitForm
 from django.contrib.auth.decorators import login_required
