@@ -1,4 +1,4 @@
-# Web Systems of Medical Clinic
+# Medical Clinic Management System
 
 Django clinic-management application for patient profiles, medical records, doctor schedules and appointment booking.
 
@@ -47,7 +47,7 @@ Django clinic-management application for patient profiles, medical records, doct
 ## Project Structure
 
 ```text
-Web-systems-of-medical-clinic/
+django-medical-clinic/
 ├── hospital/
 │   ├── hospital/          # Django project configuration
 │   ├── mainapp/           # Models, forms, views, templates and static assets
@@ -61,8 +61,8 @@ Web-systems-of-medical-clinic/
 ## Run Locally
 
 ```bash
-git clone https://github.com/MiroCoder/Web-systems-of-medical-clinic.git
-cd Web-systems-of-medical-clinic
+git clone https://github.com/MiroCoder/django-medical-clinic.git
+cd django-medical-clinic
 python -m venv .venv
 ```
 
