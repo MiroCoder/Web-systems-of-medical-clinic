@@ -1,147 +1,126 @@
 # Web Systems of Medical Clinic
 
-**Web Systems of Medical Clinic** is a Django web application for the medical clinic **Constellation**. It helps patients register, keep their medical information in one place, view doctors' schedules, and manage clinic appointments through a clean web interface.
-
-The project is prepared as a portfolio-ready full-stack Django application with demo patient data, an admin panel, and real interface screenshots displayed directly in this README.
+Django clinic-management application for patient profiles, medical records, doctor schedules and appointment booking.
 
 ## Preview
 
 ### Main Page
-
 ![Main Page](screenshots/home.png)
 
 ### Patient Profile
-
 ![Patient Profile](screenshots/profile.png)
 
 ### Appointments
-
 ![Appointments](screenshots/appointments.png)
 
 ### Schedule
-
 ![Schedule](screenshots/schedule.png)
 
 ### Django Admin
-
 ![Django Admin](screenshots/admin.png)
 
-## What The App Does
+## Features
 
-### For Patients
+### Patients
+- Account registration and authentication
+- Personal profile and medical-record view
+- Doctor and schedule browsing
+- Appointment booking by date and time
+- Personal appointment history
+- Appointment cancellation
 
-- Register and sign in to a personal clinic account.
-- View personal profile data and medical record details.
-- Check available doctors and clinic schedule.
-- Book visits with doctors by date and time.
-- Review planned appointments in a personal table.
-- Cancel appointments when needed.
-
-### For Administrators
-
-- Manage patients, doctors, appointments, schedules, and medical cards.
-- Edit doctor names and specializations.
-- Filter visits by patient, doctor, and date.
-- Work with all clinic data through the built-in Django Admin panel.
-
-## Demo User
-
-Use this account to explore the prepared patient flow:
-
-```text
-Username: Mike
-Password: MikeDemo123!
-```
-
-The demo profile includes filled patient data, a birth date after 2000, a medical record, and several scheduled appointments.
+### Administration
+- Patient, doctor, appointment, schedule and medical-record management
+- Django Admin integration
+- Filtering and management of clinic data
 
 ## Tech Stack
 
 - Python
 - Django
 - SQLite
+- Django ORM
 - Django Templates
-- HTML
-- CSS
+- HTML / CSS
 - Django Admin
 
 ## Project Structure
 
 ```text
 Web-systems-of-medical-clinic/
-+-- hospital/
-|   +-- hospital/          # Django project settings
-|   +-- mainapp/           # Clinic app, models, views, templates, static files
-|   +-- db.sqlite3         # Demo database
-|   +-- manage.py
-+-- screenshots/           # Images rendered in this README
-+-- README.md
+├── hospital/
+│   ├── hospital/          # Django project configuration
+│   ├── mainapp/           # Models, forms, views, templates and static assets
+│   ├── db.sqlite3         # Prepared local demo database
+│   └── manage.py
+├── screenshots/
+├── requirements.txt
+└── README.md
 ```
 
-## Getting Started
-
-Clone the repository and enter the Django project folder:
+## Run Locally
 
 ```bash
 git clone https://github.com/MiroCoder/Web-systems-of-medical-clinic.git
-cd Web-systems-of-medical-clinic/hospital
+cd Web-systems-of-medical-clinic
+python -m venv .venv
 ```
 
-Create and activate a virtual environment:
+Windows PowerShell:
 
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-Install Django:
-
-```bash
-pip install django
-```
-
-Apply migrations:
-
-```bash
+```powershell
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+cd hospital
 python manage.py migrate
-```
-
-Run the development server:
-
-```bash
 python manage.py runserver
 ```
 
-Open the application:
+Open:
 
 ```text
 http://127.0.0.1:8000/mainapp/
 ```
 
-## Admin Panel
+### Optional environment variables
 
-The Django Admin panel is available here:
+```text
+DJANGO_SECRET_KEY
+DJANGO_DEBUG
+DJANGO_ALLOWED_HOSTS
+DJANGO_TIME_ZONE
+```
+
+Local development works with safe development defaults; production secrets should be supplied through environment variables.
+
+## Demo User
+
+The repository keeps a prepared SQLite demo database so the UI can be reviewed immediately.
+
+```text
+Username: Mike
+Password: MikeDemo123!
+```
+
+## Admin
 
 ```text
 http://127.0.0.1:8000/admin/
 ```
 
-Create a new administrator if needed:
+You can also create a separate administrator:
 
 ```bash
 python manage.py createsuperuser
 ```
 
-The included demo database also gives **Mike** admin access for quick review.
+## Next Improvements
 
-## Roadmap
-
-- Add stronger appointment validation based on doctor availability.
-- Add profile editing for patients.
-- Improve doctor cards with photos and working hours.
-- Add email notifications for upcoming appointments.
-- Cover appointment booking and profile pages with tests.
+- Stronger appointment validation based on doctor availability
+- Automated tests for booking and profile flows
+- PostgreSQL configuration for deployment
+- Email reminders for upcoming appointments
 
 ## Author
 
-Made by [MiroCoder](https://github.com/MiroCoder).
+[Miroslav Nekhaev / MiroCoder](https://github.com/MiroCoder)
